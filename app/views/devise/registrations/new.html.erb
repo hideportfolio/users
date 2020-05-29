@@ -1,0 +1,56 @@
+<div class="signup">
+  <br />
+  <h2 style="text-align: cente">新規会員登録画面 </h2>
+  <br />
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+
+    <div class="field">
+      <div class="form-name">
+        <%= f.label "名前（姓）" %>
+      </div>
+      <div class="form-name">
+        <%= f.label "名前（名）" %>
+      </div>
+      <br />
+      <div class="form-name">
+        <%= f.text_field :sur_name,placeholder: "名前（姓）",class: "form-control" %>
+      </div>
+      <div class="form-name">
+        <%= f.text_field :name,placeholder: "名前（名）",class: "form-control" %>
+      </div>
+    </div>
+    <br />
+
+    <div class="field">
+      <%= f.label "メールアドレス" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス",class: "form-control" %>
+      <br />
+    </div>
+
+    <div class="field">
+      <%= f.label "パスワード" %>
+      <% if @minimum_password_length %>
+      <em>（<%= @minimum_password_length %>文字以上）</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password",placeholder: "パスワード",class: "form-control" %>
+      <br />
+    </div>
+
+    <div class="field">
+      <%= f.label "パスワード確認" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "パスワード確認",class: "form-control" %>
+      <br />
+    </div>
+
+    <div class="actions">
+      <%= f.submit "新規登録",class: "form-control btn btn-success" %>
+      <br />
+    </div>
+  <% end %>
+  <br />
+<section style="text-align: center">既にアカウントをお持ちの方はこちらから<br />  <%= link_to "ログイン", new_session_path(resource_name) %><br /></section>
+
+
+</div>

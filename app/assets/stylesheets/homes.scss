@@ -1,0 +1,48 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+span{
+  display:inline-block;
+  width:100px;
+  margin: 0 auto;
+  text-align: center;
+}
+@keyframes rotation1{
+  0%{ transform:rotate(0);}
+  100%{ transform:rotate(360deg); }
+}
+.circle1{
+  border-radius:100%;
+  box-sizing:border-box;
+  border:5px dotted blue;
+  animation:10s linear infinite rotation;
+  height:100px;
+  width: 100px;
+}
+.circle2{
+  border-radius:100%;
+  box-sizing:border-box;
+  border:5px dotted blue;
+  animation:7s linear infinite rotation;
+  height:150px;
+  width: 150px;
+}
+.circle3{
+  border-radius:100%;
+  box-sizing:border-box;
+  border:5px dotted blue;
+  animation:10s linear infinite rotation;
+  height:200px;
+  width: 200px;
+}
+@keyframes rotation{
+  0%{ transform:rotate(0);}
+  100%{ transform:rotate(360deg); }
+}
+.top{
+  margin: 20px;
+}
+.top-nav{
+  border: 1px solid;
+  border-radius: 5px;
+}

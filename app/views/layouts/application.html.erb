@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <header>
+      <h1 class="fly">Fritter</h1>
+        <div class="logo">
+            <marquee height="70" width="100" behavior="alternate" direction="up" scrollamount="1" truespeed>
+            <%= image_tag  "logo2.jpg" ,size: "100x100" %>
+            </marquee>
+      　</div>
+        <nav class="nav1">
+          <ul class="nav navbar-nav navbar-right ">
+              <li><%= link_to 'Top', root_path, class: 'glyphicon glyphicon-home home' %></li>
+              <li><%= link_to ' sign up', new_user_registration_path, class: 'glyphicon glyphicon-edit sign_up' %></li>
+              <li><%= link_to ' login', new_user_session_path, class: 'glyphicon glyphicon-log-in sign_in' %></li>
+              <% if user_signed_in? %>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              <% end %>
+          </ul>
+        </nav>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>
