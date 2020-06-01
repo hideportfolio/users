@@ -1,8 +1,13 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.0"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :application, "portfolio"
+set :repo_url, "git@github.com:hide9138/portfolio.git"
+
+set :deploy_to, "/home/ec2-user/portfolio"
+set :rbenv_ruby, '2.6.3'
+set :linked_files, %w{config/master.key .env}
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
