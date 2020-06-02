@@ -11,9 +11,29 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <div class="wrap-video">
+      <%= video_tag '/videos/black.mp4', autoplay: true, muted: true, controls: true, preload: true, loop: true,class: "video" %>
+  <div class="row top text">
     <header>
+      <div id="sp-menu">
+        <h2>MENU</h2>
+        <ul>
+          <li><a href="#">MENU1</a></li>
+          <li><a href="#">MENU2</a></li>
+          <li><a href="#">MENU3</a></li>
+          <li><a href="#">MENU4</a></li>
+          <li><a href="#">MENU5</a></li>
+        </ul>
+      </div>
+      <div id="hm-icon">
+        <a class="menu-trigger" href="#">
+          <span class="hm"></span>
+          <span class="hm"></span>
+          <span class="hm"></span>
+        </a>
+      </div>
+
+          <% if user_signed_in? %>
       <h1 class="fly">Fritter</h1>
         <div class="logo">
             <marquee height="70" width="100" behavior="alternate" direction="up" scrollamount="1" truespeed>
@@ -25,15 +45,16 @@
               <li><%= link_to 'Top', root_path, class: 'glyphicon glyphicon-home home' %></li>
               <li><%= link_to ' sign up', new_user_registration_path, class: 'glyphicon glyphicon-edit sign_up' %></li>
               <li><%= link_to ' login', new_user_session_path, class: 'glyphicon glyphicon-log-in sign_in' %></li>
-              <% if user_signed_in? %>
+
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-              <% end %>
           </ul>
         </nav>
     </header>
-    <div class="container">
+    <% end %>
       <%= yield %>
-    </div>
 
+
+ </div>
+  </div>
   </body>
 </html>

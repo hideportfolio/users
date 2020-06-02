@@ -109,4 +109,19 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+  #deviseが認証用のURLなどを生成するのに必要になる（らしい）
+    config.action_mailer.default_url_options = {  :host => 'hideportfolio.work' }
+    #送信方法を指定（この他に:sendmail/:file/:testなどがあります)
+    config.action_mailer.delivery_method = :smtp
+    #送信方法として:smtpを指定した場合は、このconfigを使って送信詳細の設定を行います
+    config.action_mailer.smtp_settings = {
+    #gmail利用時はaddress,domain,portは下記で固定
+    port: 587,
+    address: 'smtp.gmail.com',
+    domain: 'gmail.com',
+    user_name: 'hidehis111@gmail.com',
+    password: "MAIL_PASSWORD",
+    authentication: 'login',
+    enable_starttls_auto: true
+  }
 end
