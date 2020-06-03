@@ -13,7 +13,7 @@
   <body>
   <div class="wrap-video">
       <%= video_tag '/assets/videos/black.mp4', autoplay: true, muted: true, controls: true, preload: true, loop: true,class: "video" %>
-  <div class="row top text">
+  <div class="text">
     <header>
       <div id="sp-menu">
         <h2>MENU</h2>
@@ -32,6 +32,7 @@
           <span class="hm"></span>
         </a>
       </div>
+　　 </header>
 
           <% if user_signed_in? %>
       <h1 class="fly">Fritter</h1>
@@ -49,11 +50,8 @@
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           </ul>
         </nav>
-    </header>
-    <% end %>
+        <% end %>
       <%= yield %>
-
-
  </div>
   </div>
   </body>
