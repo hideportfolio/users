@@ -7,6 +7,7 @@
     <meta name="google-site-verification" content="J9PlEsFAUEHIbF8yL_9ubee3rbQk8WX0Ud3OhZ6dNUI" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/8899e39315.js" crossorigin="anonymous"></script>
 
   </head>
 
@@ -33,7 +34,6 @@
         </a>
       </div>
 　　 </header>
-
           <% if user_signed_in? %>
       <h1 class="fly">Fritter</h1>
         <div class="logo">
@@ -52,6 +52,25 @@
         </nav>
         <% end %>
       <%= yield %>
+
+  <section class="nb-copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 copyrt xs-center">
+        2020 © All Rights Reserved. <a href="">Terms & Conditions</a> | <a href="">Privacy Policy</a>
+        </div>
+        <div class="col-sm-6 text-right xs-center">
+        <ul class="list-inline footer-social">
+          <li><a href=""><i class="fa fa-facebook"></i></a></li>
+          <li><a href=""><i class="fa fa-twitter"></i></a></li>
+          <li><a href=""><i class="fa fa-youtube-play"></i></a></li>
+          <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+          <li><a href=""><i class="fa fa-skype"></i></a></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </section>
  </div>
   </div>
   </body>

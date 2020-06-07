@@ -13,9 +13,10 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap-sprockets";  /*ここを追加*/
- @import "bootstrap";            /*ここを追加*/
-
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
 
 *{
   margin: 0;
@@ -151,4 +152,39 @@
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+}
+
+.nb-copyright{
+  height: 80px;
+  background: #171717;
+  padding-bottom: 10px;
+  width: 100%;
+  position: absolute;/*←絶対位置*/
+  bottom: 0px; /*下に固定*/
+}
+ .nb-copyright .copyrt{
+  margin-top: 22px;
+  font-size: 14px;
+}
+.nb-copyright .copyrt a{
+  color: #7BFF00;
+}
+.nb-copyright .footer-social{
+	margin-top: 10px;
+}
+.nb-copyright .footer-social i{
+  padding: 5px 10px;
+  color: #999;
+  border: 1px solid #333;
+  margin-top: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  transition:all 0.4s ease-in-out;
+}
+.nb-copyright .footer-social i:hover{
+  background: #7BFF00;
+  color: #fff;
+}
+.nb-copyright .footer-social .fa-facebook{
+  padding: 5px 14px;
 }
