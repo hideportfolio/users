@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="google-site-verification" content="J9PlEsFAUEHIbF8yL_9ubee3rbQk8WX0Ud3OhZ6dNUI" />
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -15,31 +16,11 @@
       <%= video_tag "https://hideportfolio.s3-ap-northeast-1.amazonaws.com/videos/black.mp4", autoplay: true, muted: true, controls: true, preload: true, loop: true ,class: "video" %>
   <div class="text">
     <header>
-      <div id="sp-menu">
-        <h2>MENU</h2>
-        <ul>
-          <li><a href="#">MENU1</a></li>
-          <li><a href="#">MENU2</a></li>
-          <li><a href="#">MENU3</a></li>
-          <li><a href="#">MENU4</a></li>
-          <li><a href="#">MENU5</a></li>
-        </ul>
-      </div>
-      <div id="hm-icon">
-        <a class="menu-trigger" href="#">
-          <span class="hm"></span>
-          <span class="hm"></span>
-          <span class="hm"></span>
-        </a>
-      </div>
-　　 </header>
-
-          <% if user_signed_in? %>
       <h1 class="fly">Fritter</h1>
         <div class="logo">
-            <marquee height="70" width="100" behavior="alternate" direction="up" scrollamount="1" truespeed>
-            <%= image_tag  "logo2.jpg" ,size: "100x100" %>
-            </marquee>
+            <!-- <marquee height="70" width="100" behavior="alternate" direction="up" scrollamount="1" truespeed>
+            <%# <%= image_tag  "logo2.jpg" ,size: "100x100" %> %>
+            </marquee> -->
       　</div>
         <nav class="nav1">
           <ul class="nav navbar-nav navbar-right ">
@@ -50,9 +31,10 @@
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           </ul>
         </nav>
-        <% end %>
+    　</header>
       <%= yield %>
  </div>
-  </div>
+</div>
+
   </body>
 </html>
